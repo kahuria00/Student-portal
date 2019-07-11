@@ -1,0 +1,39 @@
+<html>
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<title>Course Catalog</title>
+</head>
+<body>
+	<div class="container mt-2">
+	<table class="table table-striped table-info table-bordered bordered-dark">
+	<button  type="button"><a href="/course/add/"> GO BACK TO REGISTER</a></button>
+		<tr>
+
+			<th scope="col">Course </th>
+			<th scope="col">Registration Number</th>
+			<th scope="col">Course Duration</th>
+			<th scope="col">Course Description</th>
+			<th scope="col">Lecturer</th>
+			<th>More Details</th>
+			<th>Edit Details</th>
+	    </tr>
+	 	{% for course in courses%}
+		<tr>
+			<td>{{course.courseName}}</td>
+  			<td>{{course.courseNumber}}</td>
+			<td>{{course.duration_in_month}}</td>
+			<td>{{course.course_description}}</td>
+			<td >{{course.teacher}}</td>
+			<td><a href="/course/detail/{{course.pk}}/" >More Details</a></td>
+			<td><a href="/course/edit/{{course.pk}}/">Edit details</a></td>
+
+			
+		</tr>
+		{% endfor %}
+
+		
+	</table>
+</div>
+
+</body>
+</html>

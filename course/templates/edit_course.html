@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	
+<title>Course REGISTER </title>
+</head>
+<body>
+<div class="container  w-50">
+	
+	
+		<div class="bg-info"> <!-- background color -->
+<h2 class="ml-5">Course Catalog</h2>
+
+	<div class="label   font-weight-bold">
+<div class="col-md-5"> <!-- column size -->
+<form method="POST">{% csrf_token %}
+	{{form.as_p}}
+</div>
+	</div>
+
+	<input type="submit" name="SAVE" class="bg-secondary col-md-3 row-md-3 ml-3 "></input>
+</form>
+</div>
+</div>
+
+
+
+
+</body>
+</html>

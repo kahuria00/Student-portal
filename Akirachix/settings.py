@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'registration',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -44,6 +45,7 @@ INSTALLED_APPS = [
     'course',
     'api',
     'rest_framework',
+    'core',
 ]
 
 MIDDLEWARE = [
@@ -126,6 +128,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL='/media/'
+LOGIN_REDIRECT_URL='/'
+ACCOUNT_ACTIVATION_DAYS=30
 MEDIA_ROOT=os.path.join(BASE_DIR,'teacher/media')
 MEDIA_ROOT=os.path.join(BASE_DIR,'students/media')
 

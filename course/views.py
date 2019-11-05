@@ -2,6 +2,8 @@ from django.shortcuts import render
 from .forms import CourseForm
 from .models import Course
 from django.shortcuts import redirect
+from django.urls import reverse
+from django.http import HttpResponseBadRequest
 
 
 def add_course(request):
@@ -10,7 +12,9 @@ def add_course(request):
 
 		if form.is_valid():
 			form.save()
-		return redirect("list_courses")
+		else:
+			return HttpResponseBadRequest()
+		# return redirect("list_courses")
 	else:
 		form=CourseForm()
 	return render(request,"add_course.html",{"form":form}) 

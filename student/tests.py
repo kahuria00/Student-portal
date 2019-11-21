@@ -16,8 +16,8 @@ class StudentTestCase(TestCase):
                 date_of_birth=datetime.date(1996,2,28),
                 registration_number="xyz",
                 place_of_residence="Kenya",
-                email="charity@yahoo.com",
                 phone_number="00007092354",
+                email="charity@yahoo.com",
                 guardian_name="namely guardian",
                 ID_Number="234333",
                 DateJoined=datetime.date(2019,2,1),
@@ -46,24 +46,24 @@ class CreateStudentTestCase(TestCase):
                 "date_of_birth":datetime.date(1996,2,28),
                 "registration_number":"xyz",
                 "place_of_residence":"Kenya",
+                "phone_number":"0709235490",
                 "email":"charity@yahoo.com",
-                "phone_number":"00007092354",
                 "guardian_name":"Jane Muthami",
                 "ID_Number":"234333",
                 "DateJoined":datetime.date(2019,2,1),
 
     }
-    self.bad_data={
+        self.bad_data={
                 "first_name":"",
                 "last_name":"",
                 "date_of_birth":datetime.date(1996,2,28),
                 "registration_number":"xyz",
-                "place_of_residence":"Kenya",
-                "email":"",
+                "place_of_residence":65567878787,
                 "phone_number":"00007092354",
+                "email":"",
                 "guardian_name":"Jane Muthami",
                 "ID_Number":"234333",
-                # "DateJoined":datetime.date(2019,1,11),
+                "DateJoined":datetime.date(2019,1,11),
 
 
     }

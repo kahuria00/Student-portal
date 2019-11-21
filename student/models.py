@@ -14,18 +14,13 @@ class Student(models.Model):
     guardian_name=models.CharField(max_length=50)
     ID_Number=models.IntegerField()
     DateJoined=models.DateField()
-    courses=models.ManyToManyField(Course)
+    courses=models.ManyToManyField(Course,related_name="students",blank=False)
     image=models.ImageField(upload_to="student_profile",blank=True)
 
     def full_name(self):
         return self.first_name,self.last_name
 
 
-    # def calculate_age(born):
-    #     today=date.today()
-    #     return today.year - born.year - ((today.month, today.day) < (born.month, born.day))
-
-    
     def get_age(self):
         today=datetime.date.today()
         return today.year - self.date_of_birth.year
@@ -36,5 +31,8 @@ class Student(models.Model):
         if age<18 or age>30:
             raise ValidationError("wrong age bracket 18-30 strictly")
         return age
+
+    def teachers(self):
+        return[ courses.teacher for course in self.courses.all]
 
 

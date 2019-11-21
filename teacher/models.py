@@ -11,7 +11,7 @@ class Teacher(models.Model):
 	ID_Number=models.IntegerField()
 	DateJoined=models.DateField()
 	profession=models.CharField(max_length=50)
-	image=models.ImageField(upload_to="teacher_profile",blank=True)
+	image=models.ImageField(upload_to="teacher_profile",blank=True, null=True)
 
 
 	def __str__(self):

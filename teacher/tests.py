@@ -10,13 +10,14 @@ class CreateTeacherTestCase(TestCase):
         "last_name":"Wanjiru",
         "registration_number":"6677865",
         'place_of_residence':"Kilimani",
-        "phone_number":"070010533323",
+        "phone_number":"070010523",
         'email':"charie@gmail.com",
-        'Id_Number':"987768787",
-        "dateJoined":datetime.date.today(),
-        "profession":"Developer"
+        'ID_Number':"987768787",
+        "DateJoined":datetime.date.today(),
+        "profession":"BackendDeveloper",
     
         }
+
         self.bad_data={
         "first_name":"charity",
         "last_name":"Wanjiru",
@@ -24,10 +25,12 @@ class CreateTeacherTestCase(TestCase):
         "place_of_residence":"Kilimani",
         "phone_number":"076533323",
         "email":"charrie@gmail.com",
-        "Id_Number":"987768787",
+        "ID_Number":"987768787",
         "DateJoined":"datetime.date.today()",
-        "profession":"Developer"
+        "profession":"BackendDeveloper",
         }
+
+   
     
     def test_teacher_form_always_valid_data(self):
         form=TeacherForm(self.data)

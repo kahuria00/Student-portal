@@ -15,15 +15,17 @@ class CreateCourseTestCase(TestCase):
            "duration_in_month":"4",
            "courseNumber":"667765",
            "course_description":"data",
-           "teacher":"James Mwai"
+           
        }
+      
        self.bad_data = {
-           "courseName":"3223" ,
+           "courseName":3223 ,
            "duration_in_month":"4",
            "courseNumber":"656677",
            'course_description':"data",
-           "teacher":"James Mwai"
+           
        }
+    
    def test_course_form_always_valid_data(self):
        form = CourseForm(self.data)
        self.assertTrue(form.is_valid())
